@@ -1,1 +1,1 @@
-ls ~//Documents/.gitignore
+git ls-files --others -i --exclude-standard
