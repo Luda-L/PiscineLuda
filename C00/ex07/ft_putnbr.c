@@ -6,38 +6,47 @@
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 17:00:45 by mtak              #+#    #+#             */
-/*   Updated: 2020/10/17 17:00:45 by mtak             ###   ########.fr       */
+/*   Updated: 2020/10/20 03:51:05 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void wrote(int rep);
-
-void wrote(int rep)
+int		wrote(int rep)
 {
-  char c;
+	char c;
 
-  if(rep==0)
-    return ;
-  wrote(rep/10);
-  c=48+rep%10;
-  write(1,&c,1);
+	if (rep == 0)
+		return (0);
+	wrote(rep / 10);
+	c = 48 + rep % 10;
+	write(1, &c, 1);
+	return (0);
 }
 
-void ft_putnbr(int nb){
-  char c;
+void	ft_putnbr(int nb)
+{
+	char c;
+	int l;
 
-  if(nb<0)
-  {
-    write(1,"-",1);
-    wrote(-(nb/10));
-    c=48-nb%10;
-  }
-  else
-  {
-    wrote(nb/10);
-    c=48+nb%10;
-  }
-  write(1,&c,1);
+	l = -2147483647;
+	if (nb < l)
+	{
+		if (nb < 0)
+		{
+			write(1, "-", 1);
+			wrote(-(nb / 10));
+			c = 48 - nb % 10;
+		}
+		else
+		{
+			wrote(nb / 10);
+			c = 48 + nb % 10;
+		}
+		write(1, &c, 1);
+	}
+	else
+	{
+		write(1, "-2147483648", 11);
+	}
 }
