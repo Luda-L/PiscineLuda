@@ -1,1 +1,1 @@
-git log | grep commit |sed 's/commit //g' | tail -5
+git log -5 --format=%H

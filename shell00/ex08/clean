@@ -1,1 +1,1 @@
-find . -name '#*#' -o -name '*~' -print | xargs -t rm
+find . -name '#*#' -o -name '*~' | xargs -t rm
