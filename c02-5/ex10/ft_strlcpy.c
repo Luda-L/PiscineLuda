@@ -1,52 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 17:00:45 by mtak              #+#    #+#             */
-/*   Updated: 2020/10/21 17:54:01 by mtak             ###   ########.fr       */
+/*   Created: 2020/10/21 19:20:12 by mtak              #+#    #+#             */
+/*   Updated: 2020/10/22 05:26:33 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		wrote(int rep)
+unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	char c;
+	unsigned int cnt;
+	unsigned int idx;
 
-	if (rep == 0)
+	cnt = 0;
+	idx = 0;
+	while (src[cnt] != '\0')
+	{
+		cnt++;
+	}
+	if (*dest == '\0' || *src == '\0')
+	{
 		return (0);
-	wrote(rep / 10);
-	c = 48 + rep % 10;
-	write(1, &c, 1);
-	return (0);
-}
-
-void	ft_putnbr(int nb)
-{
-	char	c;
-	long	l;
-
-	l = -2147483648;
-	if (nb != l)
-	{
-		if (nb < 0)
-		{
-			write(1, "-", 1);
-			wrote(-(nb / 10));
-			c = 48 - nb % 10;
-		}
-		else
-		{
-			wrote(nb / 10);
-			c = 48 + nb % 10;
-		}
-		write(1, &c, 1);
 	}
-	else
+	if (size != 0)
 	{
-		write(1, "-2147483648", 11);
+		while (idx < (size - 1) && src[idx] != '\0')
+		{
+			*dest = *src;
+			src++;
+			dest++;
+			idx++;
+		}
+		*dest = '\0';
 	}
+	return (cnt);
 }

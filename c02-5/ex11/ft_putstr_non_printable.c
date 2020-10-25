@@ -1,52 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 17:00:45 by mtak              #+#    #+#             */
-/*   Updated: 2020/10/21 17:54:01 by mtak             ###   ########.fr       */
+/*   Created: 2020/10/21 19:20:43 by mtak              #+#    #+#             */
+/*   Updated: 2020/10/22 05:28:56 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		wrote(int rep)
+void	ft_putstr_non_printable(char *str)
 {
-	char c;
+	unsigned char c;
 
-	if (rep == 0)
-		return (0);
-	wrote(rep / 10);
-	c = 48 + rep % 10;
-	write(1, &c, 1);
-	return (0);
-}
-
-void	ft_putnbr(int nb)
-{
-	char	c;
-	long	l;
-
-	l = -2147483648;
-	if (nb != l)
+	while (*str)
 	{
-		if (nb < 0)
+		c = *str;
+		if ((c >= 0 && c <= 31) || c >= 127)
 		{
-			write(1, "-", 1);
-			wrote(-(nb / 10));
-			c = 48 - nb % 10;
+			printing('\\');
+			printing("0123456789abcdef"[c / 16]);
+			printing("0123456789abcdef"[c % 16]);
 		}
 		else
 		{
-			wrote(nb / 10);
-			c = 48 + nb % 10;
+			printing(c);
 		}
-		write(1, &c, 1);
+		str++;
 	}
-	else
-	{
-		write(1, "-2147483648", 11);
-	}
+}
+
+void	printing(char c)
+{
+	write(1, &c, 1);
 }

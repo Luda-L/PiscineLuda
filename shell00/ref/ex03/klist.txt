@@ -1,5 +1,0 @@
-Credentials cache: API:18DF40E3-A071-4D9B-8D25-E8E5114EEB01
-        Principal: toh@42SEOUL.KR
-
-  Issued                Expires               Principal
-Oct 12 16:09:04 2020  Oct 13 02:09:00 2020  krbtgt/42SEOUL.KR@42SEOUL.KR
