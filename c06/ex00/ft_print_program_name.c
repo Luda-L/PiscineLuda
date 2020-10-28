@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtak <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 12:12:28 by mtak              #+#    #+#             */
-/*   Updated: 2020/10/26 12:12:54 by mtak             ###   ########.fr       */
+/*   Created: 2020/10/29 04:58:49 by mtak              #+#    #+#             */
+/*   Updated: 2020/10/29 05:14:29 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
-	char			*res;
+#include <unistd.h>
 
-	res = dest;
+int main(int argc, char **argv)
+{
+	int i;
+
 	i = 0;
-	while (i < n && src[i] != '\0')
+	argc = 0;
+	while(argv[0][i])
 	{
-		*dest = src[i];
-		dest++;
+		write(1, &argv[0][i], 1);
 		i++;
 	}
-	while (i < n)
-	{
-		*dest = '\0';
-		dest++;
-	}
-	return (res);
+	return (0);
 }
