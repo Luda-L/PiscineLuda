@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 21:25:08 by mtak              #+#    #+#             */
-/*   Updated: 2020/11/02 21:25:23 by mtak             ###   ########.fr       */
+/*   Created: 2020/10/31 21:31:30 by mtak              #+#    #+#             */
+/*   Updated: 2020/11/01 03:14:13 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+#include <stdlib.h>
+
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	while (*s1 && *s2)
+	int len;
+	int i;
+
+	i = 0;
+	if (min >= max)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		++s1;
-		++s2;
+		return (0);
 	}
-	return (*s1 - *s2);
+	else
+	{
+		len = max - min;
+		*range = (int *)malloc(sizeof(int) * len);
+		if (*range == NULL)
+			return (-1);
+		while (i < len)
+		{
+			range[0][i++] = min++;
+		}
+		return (len);
+	}
 }
