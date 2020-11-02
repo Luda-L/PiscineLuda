@@ -6,13 +6,13 @@
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 20:26:52 by mtak              #+#    #+#             */
-/*   Updated: 2020/11/01 02:30:38 by mtak             ###   ########.fr       */
+/*   Updated: 2020/11/02 20:38:05 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int 	*ft_range(int min, int max)
+int	*ft_range(int min, int max)
 {
 	int	*arr;
 	int	len;

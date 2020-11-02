@@ -5,11 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/11/02 23:10:28 by mtak              #+#    #+#              #
-#    Updated: 2020/11/02 23:10:37 by mtak             ###   ########.fr        #
+#    Created: 2020/11/02 21:25:58 by mtak              #+#    #+#              #
+#    Updated: 2020/11/02 21:28:42 by mtak             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 gcc -c -Wall -Wextra -Werror *.c
-ac -cr libft.a *.o
-ranlib libft.a
+ac -cr libft.a *.o;
+randlib libft.a

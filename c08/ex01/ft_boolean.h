@@ -1,7 +1,19 @@
-#ifndef FT_BOOLEAN_H
-#define FT_BOOLEAN_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/02 14:26:16 by mtak              #+#    #+#             */
+/*   Updated: 2020/11/02 14:54:14 by mtak             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
+
+# include <unistd.h>
 
 # define TRUE 1
 # define FALSE 0
@@ -10,6 +22,6 @@
 # define ODD_MSG "I have an odd number of arguments.\n"
 # define EVEN(nbr) (nbr % 2 == 0)
 
-typedef int t_bool;
+typedef int	t_bool;
 
 #endif
