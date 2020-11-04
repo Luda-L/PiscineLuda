@@ -6,7 +6,7 @@
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 14:32:56 by mtak              #+#    #+#             */
-/*   Updated: 2020/11/02 18:47:47 by mtak             ###   ########.fr       */
+/*   Updated: 2020/11/03 00:31:02 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int					ft_str_size(char *str)
 	int			size;
 
 	size = 0;
-	while (str[size++])
-		;
+	while (str[size])
+		size++;
 	return (size);
 }
 

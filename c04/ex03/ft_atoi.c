@@ -6,36 +6,35 @@
 /*   By: mtak <mtak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:17:41 by mtak              #+#    #+#             */
-/*   Updated: 2020/10/29 01:24:34 by mtak             ###   ########.fr       */
+/*   Updated: 2020/11/04 14:08:24 by mtak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int i;
-	int count;
+	int cnt;
 	int num;
 
 	i = 0;
+	while (9 <= str[i] && str[i] <= 13 || str[i] == 32)
+		i++;
+	cnt = 0;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			cnt++;
+		i++;
+	}
 	num = 0;
-	count = 0;
-	while (*str == 32 || (9 <= *str && *str <= 13))
-		str++;
-	while (*str == '+' || *str == '-')
+	while (str[i])
 	{
-		if (*str == '-')
-			count++;
-		str++;
+		num *= 10;
+		num = num + str[i] - 48;
 	}
-	while (48 <= *str && *str <= 57)
-	{
-		num = num * 10;
-		num = num + *str - 48;
-		str++;
-	}
-	if (count % 2 != 0)
-		num = num * -1;
+	if (cnt % 2 != 0)
+		num *= -1;
 	return (num);
 }
